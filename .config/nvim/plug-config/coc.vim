@@ -11,6 +11,7 @@ let g:coc_global_extensions = [
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-vetur',
+  \ 'coc-sh',
   \ ]
   "   \ 'coc-cssmodules',
   "   \ 'coc-yaml',
@@ -104,3 +105,17 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gh <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>cf  <Plug>(coc-fix-current)
+nmap <leader>ff  :CocFix<CR>
+nmap <leader>fa  :CocCommand eslint.executeAutofix<CR>

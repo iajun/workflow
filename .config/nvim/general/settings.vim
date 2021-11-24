@@ -1,5 +1,6 @@
 " set leader key
-let g:mapleader = "\<Space>"
+nnoremap <space> <Nop>
+map <space> <leader>
 
 set autoread " trigger `autoread` when files changes on disk
   autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
@@ -52,7 +53,7 @@ set scrolloff=7
 " let &backupdir = expand('~/.config/nvim/backup//') " Folder for backup files
 " if !isdirectory(&backupdir) | call mkdir(&backupdir, "p") | endif
 set updatetime=300                      " Faster completion
-set timeoutlen=100                      " By default timeoutlen is 1000 ms
+set timeoutlen=800                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory

@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
 
 " Snippets
-    Plug 'SirVer/ultisnips'
+"    Plug 'SirVer/ultisnips'
 
 " Auto pairs and surround for '(' '[' '{' etc.
     Plug 'jiangmiao/auto-pairs'

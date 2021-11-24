@@ -4,27 +4,48 @@ NVIM_PATH=${CONFIG_PATH}/nvim
 ZSH_PATH=${CONFIG_PATH}/zsh
 ZSH_PLUGIN_PATH=${ZSH_PATH}/.oh-my-zsh/custom/plugins
 
-curl -fLo "${NVIM_PATH}"/autoload/plug.vim -m 5 --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+export ZSH=${ZSH_PATH}/.oh-my-zsh;
 
 # Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+bash ./brew-install.sh;
+
+# brew basics
+if [ -d "${CONFIG_DIR}/.nvim" ]; then
+  rm -rf "${CONFIG_DIR}/.nvim";
+fi
+mkdir "${CONFIG_DIR}/.nvim";
+brew install nvm git python3;
 
 # Install Terminal
 brew install --cask alacritty;
 
 # Install zsh
+rm -rf .config/zsh;
 brew install zsh;
-ZSH=${ZSH_PATH} sh ./zsh-install.sh
+sh ./zsh-install.sh
 rm ~/.zshrc;
+cp .zshrc ${ZSH_PATH}
+cp .zshenv ~
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_PLUGIN_PATH}/zsh-syntax-highlighting --depth=1;
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_PLUGIN_PATH}/zsh-autosuggestions --depth=1;
 
-git clone https://github.com/powerline/fonts.git --depth=1;
-sh ./fonts/install.sh;
-rm -rf fonts;
+# Fonts
+cd ./fonts;
+sh ./install.sh;
+cd ..;
+cp fonts/ttf/*.ttf ${HOME}/Library/fonts;
 
 # Install neovim
 brew install neovim;
+
+# Copy Configuration
+CONFIG_DIR="${HOME}/.config"
+if [ ! -d "${CONFIG_DIR}" ]; then
+  mkdir ${CONFIG_DIR};
+fi
+rm -rf ${CONFIG_DIR}/{alacritty,nvim,tmux,zsh}
+cp -r ${PWD}/.config/* ${CONFIG_DIR}
+
+nvm install node;

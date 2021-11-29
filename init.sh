@@ -14,10 +14,13 @@ if [ -d "${CONFIG_DIR}/.nvim" ]; then
   rm -rf "${CONFIG_DIR}/.nvim";
 fi
 mkdir "${CONFIG_DIR}/.nvim";
-brew install nvm git python3;
+brew install nvm git python3 watchman;
 
 # Install Terminal
 brew install --cask alacritty;
+
+# Install Clipboard Management Tool
+brew install --cask jumpcut
 
 # Install zsh
 rm -rf .config/zsh;

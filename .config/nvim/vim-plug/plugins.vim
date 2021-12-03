@@ -36,7 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
 
 " Coc Server
-    Plug 'neoclide/coc.nvim'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 

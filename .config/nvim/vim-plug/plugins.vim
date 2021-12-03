@@ -35,6 +35,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Satus Line
     Plug 'vim-airline/vim-airline'
 
+" Coc Server
+    Plug 'neoclide/coc.nvim'
 
 call plug#end()
 

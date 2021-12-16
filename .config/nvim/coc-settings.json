@@ -32,7 +32,7 @@
   ],
   "eslint.enable": true,
   "eslint.autoFixOnSave": false,
-  "prettier.eslintIntegration": true,
+  "prettier.eslintIntegration": false,
   "prettier.stylelintIntegration": true,
   "coc.preferences.hoverTarget": "float",
   "tsserver.npm": "$NVM_BIN/npm"

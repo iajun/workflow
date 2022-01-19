@@ -19,6 +19,8 @@ set encoding=UTF-8                      " The encoding displayed
 " set guifont=Hack\ Nerd\ Font\ 11        " Set font
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
+set termencoding=utf-8                  " The encoding written to file
+set encoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
@@ -53,7 +55,7 @@ set scrolloff=7
 " let &backupdir = expand('~/.config/nvim/backup//') " Folder for backup files
 " if !isdirectory(&backupdir) | call mkdir(&backupdir, "p") | endif
 set updatetime=300                      " Faster completion
-set timeoutlen=800                      " By default timeoutlen is 1000 ms
+set timeoutlen=1000                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
@@ -87,3 +89,15 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 " set comments=fb:*,fb:-,fb:+,n:>
 " set formatoptions=tcroqn
 " let g:vim_indent_cont = shiftwidth() * 3
+"
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  augroup redhat
+  autocmd!
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif
+  augroup END
+endif

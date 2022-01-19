@@ -12,37 +12,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Git Integration
     Plug 'mhinz/vim-signify'
-
-" Fuzzy Finder
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
-
-" Snippets
-"    Plug 'SirVer/ultisnips'
-
-" Auto pairs and surround for '(' '[' '{' etc.
-    Plug 'jiangmiao/auto-pairs'
+    Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-surround'
+
+" Auto pairs and ssurroundurround for '(' '[' '{' etc.
 " Comments
     Plug 'tpope/vim-commentary'
 
 " Multiple Cursors
     Plug 'terryma/vim-multiple-cursors'
 
-" Browser Support
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
 " Satus Line
     Plug 'vim-airline/vim-airline'
-
-" Coc Server
-"    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-lua/popup.nvim'
 
 " Debugger
     Plug 'puremourning/vimspector'
@@ -50,14 +31,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'kristijanhusak/defx-git'
   Plug 'kristijanhusak/defx-icons'
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'tami5/lspsaga.nvim', { 'branch': 'nvim51' }
   Plug 'folke/lsp-colors.nvim'
   Plug 'L3MON4D3/LuaSnip'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/nvim-compe'
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+  Plug 'rafamadriz/friendly-snippets'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'onsails/lspkind-nvim'
@@ -67,10 +51,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'mhartington/formatter.nvim'
   Plug 'iamcco/diagnostic-languageserver'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
+" Jumper
+  Plug 'phaazon/hop.nvim'
 
 call plug#end()
-
-nnoremap <silent> <leader>f :Format<CR>
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *
@@ -78,8 +64,3 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-lua << EOF
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.volar.setup{}
-EOF

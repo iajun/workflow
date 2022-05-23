@@ -15,18 +15,15 @@ telescope.setup{
   pickers = {
     git_files = {
       show_untracked = true
-    }
+    },
+    buffers = {
+      ignore_current_buffer = true,
+      sort_lastused = true,
+    },
   },
   extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-    }
   }
 }
-telescope.load_extension('fzf')
 
 vim.api.nvim_set_keymap('n', '<C-p>', "<cmd>lua require('telescope.builtin').git_files()<cr>", { silent = true })
 vim.api.nvim_set_keymap('n', '<C-g>', "<cmd>lua require('telescope.builtin').live_grep()<cr>", { silent = true })

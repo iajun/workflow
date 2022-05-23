@@ -1,0 +1,15 @@
+{
+  "TemplateComposition": {
+    "prefix": ["vcp"],
+    "body": [
+      "<template>\n<div>\n\t\n</div>\n</template>\n",
+      "<script lang=\"ts\" setup>\n</script>\n",
+      "<style lang=\"scss\" scoped>\n</style>"
+    ]
+  }
+}
+
+
+
+
+

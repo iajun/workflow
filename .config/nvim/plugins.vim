@@ -4,57 +4,70 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Git Integration
-    Plug 'mhinz/vim-signify'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-surround'
+  Plug 'mhinz/vim-signify'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
 
 " Auto pairs and ssurroundurround for '(' '[' '{' etc.
 " Comments
-    Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-commentary'
 
 " Multiple Cursors
-    Plug 'terryma/vim-multiple-cursors'
+  Plug 'terryma/vim-multiple-cursors'
 
-" Satus Line
-    Plug 'vim-airline/vim-airline'
-
-" Debugger
-    Plug 'puremourning/vimspector'
+" A blazing fast and easy to configure Neovim statusline written in Lua.
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'kristijanhusak/defx-git'
-  Plug 'kristijanhusak/defx-icons'
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'folke/lsp-colors.nvim'
-  Plug 'L3MON4D3/LuaSnip'
+
+" Lsp
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'
+
+" Lsp typescript improvement
+  Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+" Snippets and completion
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
+  Plug 'hrsh7th/vim-vsnip-integ'
   Plug 'rafamadriz/friendly-snippets'
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'onsails/lspkind-nvim'
+
+" Popup and choosing for completion
   Plug 'nvim-lua/popup.nvim'
+
+" Telescope
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'nvim-telescope/telescope-frecency.nvim'
+  Plug 'BurntSushi/ripgrep'
+  Plug 'tami5/sqlite.lua'
+  Plug 'kyazdani42/nvim-web-devicons'
+
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'iamcco/diagnostic-languageserver'
+
+" Utils
   Plug 'windwp/nvim-autopairs'
   Plug 'mhartington/formatter.nvim'
-  Plug 'iamcco/diagnostic-languageserver'
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  " buffer delete and keeping splitting
+  Plug 'moll/vim-bbye'
 
 " Jumper
   Plug 'phaazon/hop.nvim'
+
+" Theme
+  Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end()
 

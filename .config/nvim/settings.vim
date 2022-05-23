@@ -15,12 +15,8 @@ set hidden                              " Required to keep multiple buffers open
 set linebreak                           " Prevents words from breaking over line
 set breakindent                         " Indent wrapped lines
   let &showbreak='  '                   " Indent amount
-set encoding=UTF-8                      " The encoding displayed
 " set guifont=Hack\ Nerd\ Font\ 11        " Set font
 set pumheight=10                        " Makes popup menu smaller
-set fileencoding=utf-8                  " The encoding written to file
-set termencoding=utf-8                  " The encoding written to file
-set encoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object"
@@ -47,10 +43,13 @@ set background=dark                     " tell vim what the background color loo
 set showtabline=2                       " Always show tab bar at top
 set noshowmode                          " We don't need to see things like -- INSERT --
 set nobackup                            " This is recommended by coc
+set noswapfile
 set nowritebackup                       " This is recommended by coc
-" set backupdir=~/.config/nvim/backup
-" set directory=~/.config/nvim/swap//
 set scrolloff=7
+
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
 
 " let &backupdir = expand('~/.config/nvim/backup//') " Folder for backup files
 " if !isdirectory(&backupdir) | call mkdir(&backupdir, "p") | endif
@@ -59,7 +58,6 @@ set timeoutlen=1000                      " By default timeoutlen is 1000 ms
 set formatoptions-=cro                  " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 "set autochdir                           " Your working directory will always be the same as your working directory
-" set filetype on
 
 " makes vim look for filetype specific settings in nvim/ftplugin/ and
 " sets indenting by file type
@@ -83,8 +81,8 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 
 " set viminfo='100,n$HOME/.vim/files/info/viminfo
 
-" set wildmenu                            " autocomplete in command mode
-" set wildmode=list:full                  " settings for wildmenue
+set wildmenu                            " autocomplete in command mode
+set wildmode=list:full                  " settings for wildmenue
 " set indentexpr= '-'
 " set comments=fb:*,fb:-,fb:+,n:>
 " set formatoptions=tcroqn

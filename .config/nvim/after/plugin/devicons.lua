@@ -1,8 +1,6 @@
-if !exists('g:loaded_devicons') | finish | endif
-
-lua << EOF
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
+ -- you can specify color or cterm_color instead of specifying both of them
  -- DevIcon will be appended to `name`
  override = {
  };
@@ -10,4 +8,5 @@ require'nvim-web-devicons'.setup {
  -- will get overriden by `get_icons` option
  default = true;
 }
-EOF
+
+require'nvim-web-devicons'.get_icons()

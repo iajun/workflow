@@ -1,12 +1,9 @@
 " GENERAL
-source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/vim-plug/plugins.vim
+source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/plugins.vim
 
 " MAPPINGS
-source $HOME/.config/nvim/keys/mappings.vim
-
-" AUTOCOMPLETE
-" source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/mappings.vim
 
 if exists("&termguicolors") && exists("&winblend")
   syntax enable
@@ -17,6 +14,6 @@ if exists("&termguicolors") && exists("&winblend")
   set background=dark
   " Use NeoSolarized
   let g:neosolarized_termtrans=1
-  runtime ./colors/NeoSolarized.vim
-  colorscheme NeoSolarized
+  " runtime ./colors/NeoSolarized.vim
+  colorscheme purify
 endif

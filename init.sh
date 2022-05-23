@@ -1,3 +1,5 @@
+# install macports first please!
+
 # Variables
 CONFIG_PATH=${PWD}/.config
 NVIM_PATH=${CONFIG_PATH}/nvim
@@ -6,25 +8,15 @@ ZSH_PLUGIN_PATH=${ZSH_PATH}/.oh-my-zsh/custom/plugins
 
 export ZSH=${ZSH_PATH}/.oh-my-zsh;
 
-# Install Homebrew
-bash ./brew-install.sh;
-
 # brew basics
 if [ -d "${CONFIG_DIR}/.nvim" ]; then
   rm -rf "${CONFIG_DIR}/.nvim";
 fi
 mkdir "${CONFIG_DIR}/.nvim";
-brew install nvm git python3 watchman;
-
-# Install Terminal
-brew install --cask alacritty;
-
-# Install Clipboard Management Tool
-brew install --cask jumpcut
+port install neovim tmux tmux-pasteboard autojump ripgrep nvim zsh;
 
 # Install zsh
 rm -rf .config/zsh;
-brew install zsh;
 sh ./zsh-install.sh
 rm ~/.zshrc;
 cp .zshrc ${ZSH_PATH}
@@ -39,9 +31,6 @@ cd ./fonts;
 sh ./install.sh;
 cd ..;
 cp fonts/ttf/*.ttf ${HOME}/Library/fonts;
-
-# Install neovim
-brew install neovim;
 
 # Copy Configuration
 CONFIG_DIR="${HOME}/.config"

@@ -13,7 +13,7 @@ if [ -d "${CONFIG_DIR}/.nvim" ]; then
   rm -rf "${CONFIG_DIR}/.nvim";
 fi
 mkdir "${CONFIG_DIR}/.nvim";
-port install neovim tmux tmux-pasteboard autojump ripgrep nvim zsh;
+port install neovim tmux tmux-pasteboard autojump ripgrep nvim zsh stylua;
 
 # Install zsh
 rm -rf .config/zsh;
@@ -41,3 +41,5 @@ rm -rf ${CONFIG_DIR}/{alacritty,nvim,tmux,zsh}
 cp -r ${PWD}/.config/* ${CONFIG_DIR}
 
 nvm install node;
+
+npm i -g eslint_d @fsouza/prettierd typescript yarn;

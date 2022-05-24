@@ -30,6 +30,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
+  Plug 'uga-rosa/cmp-dictionary'
+  Plug 'f3fora/cmp-spell'
+  Plug 'David-Kunz/cmp-npm'
   Plug 'hrsh7th/nvim-cmp'
 
 " Lsp typescript improvement
@@ -48,6 +51,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Telescope
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-ui-select.nvim'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-telescope/telescope-frecency.nvim'
   Plug 'BurntSushi/ripgrep'
@@ -68,6 +72,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Theme
   Plug 'rafi/awesome-vim-colorschemes'
+
+" Formatters
+  Plug 'andrejlevkovitch/vim-lua-format'
+
+" Tree
+  Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 

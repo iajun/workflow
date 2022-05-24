@@ -1,13 +1,7 @@
-nmap <leader>a :Ack! ""<Left>
-nmap <leader>A :Ack! "\b<cword>\b"<CR>
 
 " +++ Shortcuts +++
 " Open Buffer
 nnoremap <silent><leader>l :Buffers<CR>
-" Open test file for a current file
-nnoremap <silent><leader>s :A<CR>
-" Open test file for a current file in a vertical window
-nnoremap <silent><leader>v :AV<CR>
 " Vertically split screen
 nnoremap <silent><leader>\ :vs<CR>
 " Split screen
@@ -17,6 +11,7 @@ nnoremap <silent><leader>- :split<CR>
 nnoremap <silent><leader>w :w!<CR>
 nnoremap <silent><leader>q :q!<CR>
 nnoremap <silent><leader>x :x<CR>
+nmap <silent><leader>s :wq<CR>
 " Open Vim configuration file for editing
 " nnoremap <silent><leader>2 :e ~/.vimrc<CR>
 " Source Vim configuration file and install plugins

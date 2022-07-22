@@ -1,6 +1,6 @@
 " GENERAL
 source $HOME/.config/nvim/settings.vim
-source $HOME/.config/nvim/plugins.vim
+lua require('plugins')
 
 " MAPPINGS
 source $HOME/.config/nvim/mappings.vim

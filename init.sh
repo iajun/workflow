@@ -30,9 +30,11 @@ rm ~/.zshrc;
 cp .zshrc ${ZSH_PATH}
 cp .zshenv ~
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_PLUGIN_PATH}/zsh-syntax-highlighting --depth=1;
-
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_PLUGIN_PATH}/zsh-autosuggestions --depth=1;
+# Install zsh plugin manager
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+source "${ZSH_PATH}/.zshrc"
+zinit self-update
+zinit light zsh-users/zsh-completions zsh-users/zsh-syntax-highlighting zsh-users/zsh-autosuggestions
 
 # Fonts
 cd ./fonts;
@@ -52,3 +54,7 @@ rm -rf ${CONFIG_DIR}/{alacritty,nvim,tmux,zsh}
 cp -r ${PWD}/.config/* ${CONFIG_DIR}
 
 nvm install node;
+
+# Config git
+git config --global user.email "iveoname@gmail.com";
+git config --global user.name "Sharp Zhou"

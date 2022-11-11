@@ -10,7 +10,7 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 # protect special characters
 export LC_CTYPE="en_US.UTF-8"
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:\"`python3 -m site --user-base`/bin\"
 
 # Setopts
 # allow prompt substitution
@@ -266,3 +266,4 @@ zinit light-mode for \
     zsh-users/zsh-autosuggestions
 
 ### End of Zinit's installer chunk
+

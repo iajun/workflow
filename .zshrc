@@ -263,7 +263,8 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust \
     zsh-users/zsh-completions \
     zsh-users/zsh-syntax-highlighting \
-    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-autosuggestions \
+    igoradamenko/npm.plugin.zsh
 
 ### End of Zinit's installer chunk
 

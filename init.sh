@@ -14,7 +14,7 @@ if [ -d "${CONFIG_DIR}/.nvim" ]; then
   rm -rf "${CONFIG_DIR}/.nvim";
 fi
 mkdir "${CONFIG_DIR}/.nvim";
-brew install nvm git python3 watchman;
+brew install nvm git python3 watchman rg;
 
 # Install Terminal
 brew install --cask alacritty;

@@ -223,7 +223,7 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats '%b '
 PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 
-plugins=(git npm brew macos z node)
+plugins=(git npm brew macos z node docker)
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
